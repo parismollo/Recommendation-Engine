@@ -33,6 +33,6 @@ class RecommendationModel:
                 if len(recommended_product) > 0:
                     recommendations.append(recommended_product)
 
-        if len(recommendations) == 0:
-            print(f'\nNo recommendations for {products} so far...')
+        # if len(recommendations) == 0:
+        #     return None
         return self.flatter(recommendations)

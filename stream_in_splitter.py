@@ -22,6 +22,6 @@ for line in sys.stdin:
         out = open(dir_name + "/chunk-" + str(chunk_nb) + ".txt", "w")
     line_nb += 1
     out.write(line)
-    if line_nb == 250000:
+    if line_nb == 5000:
         chunk_nb += 1
         line_nb = 0
