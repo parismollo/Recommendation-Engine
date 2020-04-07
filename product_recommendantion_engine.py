@@ -8,14 +8,13 @@ class RecommendationModel:
         self.filename = filename
 
     def create_user_sets(self) -> None:
-        with open(self.filename) as f:
-            print("\nCreating Dictionary...\n")
-            for line in tqdm(f):
-                user = line.split()[0]
-                products = []
-                for p in line.split()[1:]:
-                    products.append(p)
-                    self.users[user] = products
+        # print("\nCreating Dictionary...\n")
+        for line in tqdm(self.filename):
+            user = line.split()[0]
+            products = []
+            for p in line.split()[1:]:
+                products.append(p)
+                self.users[user] = products
 
     def flatter(self, recommendations) -> set:
         flat_list_recommendations = [item for sublist in recommendations for item in sublist]
@@ -26,7 +25,7 @@ class RecommendationModel:
         products = list(products)
         recommendations = []
 
-        print("\nLooking for recommendations...\n")
+        # print("\nLooking for recommendations...\n")
 
         for user in tqdm(self.users):
             if set(products).issubset(self.users[user]):
