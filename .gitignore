@@ -1,3 +1,4 @@
 env/
 data.txt
 __pycache__/
+.vscode
