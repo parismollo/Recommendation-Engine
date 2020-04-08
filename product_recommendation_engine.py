@@ -1,4 +1,4 @@
-import sys 
+import sys
 import glob
 from tqdm import tqdm
 
@@ -8,9 +8,9 @@ products = []
 
 if len(sys.argv) > 1:
     for arg in sys.argv[1:]:
-        products.append(arg.upper())   
+        products.append(arg.upper())
 else:
-    raise TypeError('Missing arguments. Please type one or multiple products\n Ex: main.py AAA\n')
+    raise TypeError('Missing arguments. Please type one or multiple products\n Ex: main.py AAA ZZZ\n')
 
 products = str(products)
 processes = []
@@ -40,6 +40,6 @@ for process in tqdm(processes):
         outputs.append(item.decode('ASCII'))
 
 if len(outputs) == 0:
-    print('\nThere are no recommendation for this product set')
+    print('\nThere are no recommendations for this product set')
 else:
     print('\n', *outputs, sep=' ')

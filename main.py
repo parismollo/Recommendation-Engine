@@ -1,5 +1,5 @@
 import sys
-from product_recommendantion_engine import RecommendationModel
+from recommendation_model import RecommendationModel
 
 filename = sys.stdin
 products = sys.argv[1]
