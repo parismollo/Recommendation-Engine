@@ -10,11 +10,14 @@ class RecommendationModel:
     def create_user_sets(self) -> None:
         # print("\nCreating Dictionary...\n")
         for line in self.filename:
-            user = line.split()[0]
-            products = []
-            for p in line.split()[1:]:
-                products.append(p)
-                self.users[user] = products
+            if len(line.split()) > 0:
+                user = line.split()[0]
+                products = []
+                for p in line.split()[1:]:
+                    products.append(p)
+                    self.users[user] = products
+            else:
+                continue
 
     def flatter(self, recommendations) -> set:
         flat_list_recommendations = [item for sublist in recommendations for item in sublist]
@@ -51,7 +54,14 @@ class RecommendationModel:
     def most_similar_products(self, user_input):
         users_points = self.most_similar_users(user_input)
         if len(users_points) > 0:
-            for k in sorted(users_points, key=users_points.get, reverse=False):
-                print(f"{k}: {list(self.users[k])} - {users_points[k]} similar products")
+            print(f"\nYour products: {self.users[user_input]} - USER: {user_input}\n")
+            counter = 0
+            print("\n       ---------TOP 10 Recommendations---------\n")
+            for k in sorted(users_points, key=users_points.get, reverse=True):
+                counter += 1
+                if counter < 11:
+                    print(f"{k}: {list(self.users[k])} - {users_points[k]} similar product(s)")
+                else:
+                    break
         else:
             print('No similar purchases...')
