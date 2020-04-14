@@ -27,6 +27,19 @@ Users that consume product AAA and BBB would be (according to the algorithm), re
 
 The method **recommend_product** uses the built-in **set** type in order to verify if the inputs (products) are a subset of other users purchases.
 
+
+## Statistics
+After cloning the repo, if you are interested in comparing users purchases, run the following command:
+
+``` 
+python statistics.py U0 < data.txt
+
+```
+This command will return in ascending order the most similar users purchases with respect to user: U0
+Feel free to change the user. Ex: ``` python statistics.py U100 < data.txt ```
+
+**Attention**: *Be sure to have in the repo the data.txt file*
+
 ## Project architecture 
 
 The project is composed of 4 main files:
@@ -40,9 +53,13 @@ Handle the inputs from the parallel algorithm (file *product_recommendation_engi
 * **product_recommendation_engine.py**:
 Parallel algorithm, split the task among the computer cpu's to increase performance
 
+* **statistics.py**:
+This file will output in ascending order the users that have the more similarities with the your user input purchases.
+
 
 * **stream_in_splitter.py**:
 Split the 1 * 10⁶ rows dataset into 200 files of 5000 rows.
+
 
 
 

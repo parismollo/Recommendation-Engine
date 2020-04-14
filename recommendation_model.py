@@ -1,4 +1,4 @@
-# from tqdm import tqdm
+from tqdm import tqdm
 from typing import Dict, List
 
 
@@ -36,3 +36,22 @@ class RecommendationModel:
         # if len(recommendations) == 0:
         #     return None
         return self.flatter(recommendations)
+
+    def most_similar_users(self, user_input):
+        user_points = {}
+        for user in tqdm(self.users):
+            if user != user_input:
+                a = self.users[user_input]
+                b = self.users[user]
+                points = len(set(a) & set(b))
+                if points >= 1:
+                    user_points[user] = points
+        return user_points
+
+    def most_similar_products(self, user_input):
+        users_points = self.most_similar_users(user_input)
+        if len(users_points) > 0:
+            for k in sorted(users_points, key=users_points.get, reverse=False):
+                print(f"{k}: {list(self.users[k])} - {users_points[k]} similar products")
+        else:
+            print('No similar purchases...')
