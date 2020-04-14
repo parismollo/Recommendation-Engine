@@ -1,5 +1,6 @@
 # Recommendation Engine
 
+![demo - 1](images/r_engine.gif)
 
 ## Try it out !
 1. Clone the repo 
