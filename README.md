@@ -40,7 +40,7 @@ After cloning the repo, if you are interested in comparing users purchases, run 
 python3 statistics.py U0 < data.txt
 
 ```
-This command will return in descending order the top 10 most similar users purchases with respect to user: U0
+This command will return in descending order the top 10 most similar users purchases with respect to user: U0.
 Feel free to change the user. Ex: ``` python3 statistics.py U100 < data.txt ```
 
 **Attention**: *Be sure to have the data.txt file in the repo*
