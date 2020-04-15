@@ -5,8 +5,8 @@
 ## Try it out !
 1. Clone the repo 
 * ```git clone [repository URL]```
-2. Run the following command to get product recommendations:
-* ```python product_recommendation_engine.py AAA ZZZ```
+2. Run the following command to get product recommendations **(The code only works on python 3!)**:
+* ```python3 product_recommendation_engine.py AAA ZZZ```
 
 Try with any product or set of products.
 
@@ -33,11 +33,11 @@ The method **recommend_product** uses the built-in **set** type in order to veri
 After cloning the repo, if you are interested in comparing users purchases, run the following command:
 
 ``` 
-python statistics.py U0 < data.txt
+python3 statistics.py U0 < data.txt
 
 ```
 This command will return in descending order the top 10 most similar users purchases with respect to user: U0
-Feel free to change the user. Ex: ``` python statistics.py U100 < data.txt ```
+Feel free to change the user. Ex: ``` python3 statistics.py U100 < data.txt ```
 
 **Attention**: *Be sure to have the data.txt file in the repo*
 
