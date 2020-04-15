@@ -1,6 +1,6 @@
 import sys
 import glob
-from tqdm import tqdm
+# from tqdm import tqdm
 
 
 dir_name = 'products'
@@ -26,14 +26,14 @@ def sub_process(pgm_name, file_name, products):
 
 
 print('Looking into files...')
-for file_name in tqdm(glob.glob(dir_name + "/chunk-*.txt")):
+for file_name in glob.glob(dir_name + "/chunk-*.txt"):
     processes.append(
         sub_process("main", file_name, products)
     )
 
 print('Extracting results...')
 outputs = []
-for process in tqdm(processes):
+for process in processes:
     out, err = process.communicate()
     for item in out.split():
         # if type(ite)
