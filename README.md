@@ -5,7 +5,11 @@
 ## Try it out !
 1. Clone the repo 
 * ```git clone [repository URL]```
-2. Run the following command to get product recommendations **(The code only works on python 3!)**:
+
+2. install dependencies (recommended to use a virtualenv):
+ ```pip install requirements.txt```
+
+3. Run the following command to get product recommendations **(The code only works on python 3!)**:
 * ```python3 product_recommendation_engine.py AAA ZZZ```
 
 Try with any product or set of products.
