@@ -6,7 +6,7 @@
 1. Clone the repo 
 * ```git clone [repository URL]```
 
-2. install dependencies (recommended to use a virtualenv):
+2. Move to the directory cloned and install dependencies (recommended to use a virtualenv):
 * ```pip install requirements.txt```
 
 3. Run the following command to get product recommendations **(The code only works on python 3!)**:
