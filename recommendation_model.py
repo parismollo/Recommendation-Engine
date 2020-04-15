@@ -1,4 +1,4 @@
-from tqdm import tqdm
+# from tqdm import tqdm
 from typing import Dict, List
 
 
@@ -42,7 +42,7 @@ class RecommendationModel:
 
     def most_similar_users(self, user_input):
         user_points = {}
-        for user in tqdm(self.users):
+        for user in self.users:
             if user != user_input:
                 a = self.users[user_input]
                 b = self.users[user]
