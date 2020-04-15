@@ -19,7 +19,7 @@ processes = []
 def sub_process(pgm_name, file_name, products):
     import subprocess
     return subprocess.Popen(
-        ("python", pgm_name + ".py", products),
+        ("python3", pgm_name + ".py", products),
         stdin=open(file_name),
         stdout=subprocess.PIPE
     )
